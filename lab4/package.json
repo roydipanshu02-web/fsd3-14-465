@@ -1,0 +1,17 @@
+{
+  "name": "lab4",
+  "version": "1.0.0",
+  "description": "1. Create project folder\r 2. right click on project folder and select open in integrated terminal\r 3. type in terminal `npm init -y` press enter \r 4. open package.json file from project folder",
+  "main": "index.js",
+  "scripts": {
+    "start":"node App.js",
+    "dev": "nodemon App.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
