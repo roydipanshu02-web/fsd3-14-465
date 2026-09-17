@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supra Racing | Exotic Cars</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #080808;
+            color: white;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            background: rgba(0, 0, 0, 0.85);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff3030;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff3030;
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(90deg, rgba(0,0,0,0.95), rgba(0,0,0,0.45), rgba(0,0,0,0.75)),
+                url("https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 75px;
+            line-height: 0.95;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+
+        .hero h1 span {
+            color: #ff3030;
+        }
+
+        .hero p {
+            margin-top: 25px;
+            color: #ddd;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-right: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #ff3030;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #d90000;
+            transform: translateY(-3px);
+        }
+
+        .secondary {
+            border: 1px solid white;
+            color: white;
+        }
+
+        .secondary:hover {
+            background: white;
+            color: black;
+        }
+
+        /* STATS */
+        .stats {
+            display: flex;
+            gap: 60px;
+            margin-top: 45px;
+        }
+
+        .stat h2 {
+            color: #ff3030;
+            font-size: 32px;
+        }
+
+        .stat p {
+            margin-top: 5px;
+            font-size: 13px;
+            color: #aaa;
+        }
+
+        /* SECTION */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            text-transform: uppercase;
+        }
+
+        .section-title span {
+            color: #ff3030;
+        }
+
+        .section-title p {
+            color: #999;
+            margin-top: 10px;
+        }
+
+        /* CARDS */
+        .cars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .car-card {
+            background: #121212;
+            border: 1px solid #252525;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+
+        .car-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff3030;
+            box-shadow: 0 15px 40px rgba(255, 48, 48, 0.15);
+        }
+
+        .car-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .car-info {
+            padding: 25px;
+        }
+
+        .car-info h3 {
+            font-size: 25px;
+            font-style: italic;
+        }
+
+        .car-info p {
+            color: #999;
+            margin: 10px 0 20px;
+        }
+
+        .car-info a {
+            color: #ff3030;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* PERFORMANCE */
+        .performance {
+            background: #101010;
+            text-align: center;
+        }
+
+        .performance-box {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .performance-item {
+            padding: 30px 15px;
+            border: 1px solid #292929;
+            background: #080808;
+        }
+
+        .performance-item h3 {
+            color: #ff3030;
+            font-size: 32px;
+        }
+
+        .performance-item p {
+            color: #aaa;
+            margin-top: 8px;
+        }
+
+        /* ABOUT */
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about img {
+            width: 50%;
+            border-radius: 5px;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h2 {
+            font-size: 45px;
+            text-transform: uppercase;
+        }
+
+        .about-content h2 span {
+            color: #ff3030;
+        }
+
+        .about-content p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 35px;
+            background: #050505;
+            border-top: 1px solid #222;
+            color: #777;
+        }
+
+        footer span {
+            color: #ff3030;
+        }
+
+        /* MOBILE */
+        @media (max-width: 900px) {
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .cars {
+                grid-template-columns: 1fr;
+            }
+
+            .performance-box {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about {
+                flex-direction: column;
+            }
+
+            .about img {
+                width: 100%;
+            }
+
+            nav ul {
+                display: none;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .stats {
+                gap: 20px;
+            }
+
+            .stat h2 {
+                font-size: 25px;
+            }
+
+            .performance-box {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">SUPRA<span>RACING</span></div>
+
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#cars">CARS</a></li>
+            <li><a href="#performance">PERFORMANCE</a></li>
+            <li><a href="/about">ABOUT</a></li>
+            <li><a href="/enquiry">ENQUIRY</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Born To<br>
+                <span>Race.</span>
+            </h1>
+
+            <p>
+                Experience the legendary Toyota Supra and a collection
+                of exotic performance machines built for speed,
+                adrenaline and the open road.
+            </p>
+
+            <div class="buttons">
+                <a href="#cars" class="btn primary">EXPLORE CARS</a>
+                <a href="#performance" class="btn secondary">VIEW SPECS</a>
+            </div>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <h2>3.0L</h2>
+                    <p>TURBO ENGINE</p>
+                </div>
+
+                <div class="stat">
+                    <h2>382</h2>
+                    <p>HORSEPOWER</p>
+                </div>
+
+                <div class="stat">
+                    <h2>4.1s</h2>
+                    <p>0–60 MPH</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CARS SECTION -->
+    <section id="cars">
+
+        <div class="section-title">
+            <h2>EXOTIC <span>MACHINES</span></h2>
+            <p>Machines designed to turn heads and dominate the road.</p>
+        </div>
+
+        <div class="cars">
+
+            <!-- SUPRA -->
+            <div class="car-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=80"
+                    alt="Sports Car">
+
+                <div class="car-info">
+                    <h3>TOYOTA SUPRA</h3>
+
+                    <p>
+                        The iconic Japanese sports car engineered
+                        for pure driving excitement.
+                    </p>
+
+                    <a href="#">VIEW DETAILS →</a>
+                </div>
+
+            </div>
+
+
+            <!-- LAMBORGHINI -->
+            <div class="car-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=1000&q=80"
+                    alt="Lamborghini">
+
+                <div class="car-info">
+                    <h3>LAMBORGHINI</h3>
+
+                    <p>
+                        Italian engineering combined with
+                        aggressive exotic-car styling.
+                    </p>
+
+                    <a href="#">VIEW DETAILS →</a>
+                </div>
+
+            </div>
+
+
+            <!-- FERRARI -->
+            <div class="car-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=1000&q=80"
+                    alt="Ferrari">
+
+                <div class="car-info">
+                    <h3>FERRARI</h3>
+
+                    <p>
+                        Legendary performance, unmistakable design
+                        and motorsport DNA.
+                    </p>
+
+                    <a href="#">VIEW DETAILS →</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PERFORMANCE -->
+    <section class="performance" id="performance">
+
+        <div class="section-title">
+
+            <h2>RAW <span>PERFORMANCE</span></h2>
+
+            <p>
+                Numbers that define the racing experience.
+            </p>
+
+        </div>
+
+        <div class="performance-box">
+
+            <div class="performance-item">
+                <h3>382 HP</h3>
+                <p>Maximum Power</p>
+            </div>
+
+            <div class="performance-item">
+                <h3>368 LB-FT</h3>
+                <p>Torque</p>
+            </div>
+
+            <div class="performance-item">
+                <h3>155 MPH</h3>
+                <p>Top Speed</p>
+            </div>
+
+            <div class="performance-item">
+                <h3>4.1 SEC</h3>
+                <p>0–60 MPH</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="about">
+
+            <img
+                src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1200&q=85"
+                alt="Racing Car">
+
+            <div class="about-content">
+
+                <h2>
+                    BUILT FOR<br>
+                    <span>THE THRILL</span>
+                </h2>
+
+                <p>
+                    Welcome to Supra Racing — a digital garage
+                    dedicated to legendary Japanese performance
+                    cars and exotic machines from around the world.
+                </p>
+
+                <p>
+                    From the streets to the track, every machine
+                    represents a combination of engineering,
+                    performance and unmistakable style.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 <span>SUPRA RACING</span> | Built for Speed
+    </footer>
+
+</body>
+</html>
+
