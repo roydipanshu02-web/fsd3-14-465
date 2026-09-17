@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Supra Racing</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #080808;
+            color: white;
+        }
+
+        /* NAVBAR */
+        nav {
+            height: 75px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: #ff3030;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff3030;
+        }
+
+        /* HEADER */
+        .header {
+            height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            background:
+                linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
+                url("https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1800&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .header h1 {
+            font-size: 65px;
+            font-style: italic;
+            text-transform: uppercase;
+        }
+
+        .header h1 span {
+            color: #ff3030;
+        }
+
+        .header p {
+            margin-top: 15px;
+            color: #ccc;
+            font-size: 18px;
+        }
+
+        /* ABOUT CONTENT */
+        .about {
+            padding: 80px 8%;
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 50%;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .about-content {
+            width: 50%;
+        }
+
+        .about-content h2 {
+            font-size: 40px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .about-content h2 span {
+            color: #ff3030;
+        }
+
+        .about-content p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        /* FEATURES */
+        .features {
+            padding: 70px 8%;
+            background: #111;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 40px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .features h2 span {
+            color: #ff3030;
+        }
+
+        .feature-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature {
+            background: #080808;
+            border: 1px solid #292929;
+            padding: 35px 20px;
+            transition: 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-8px);
+            border-color: #ff3030;
+        }
+
+        .feature h3 {
+            color: #ff3030;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .feature p {
+            color: #999;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #050505;
+            color: #777;
+        }
+
+        footer span {
+            color: #ff3030;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .header h1 {
+                font-size: 45px;
+            }
+
+            .about {
+                flex-direction: column;
+            }
+
+            .about-image,
+            .about-content {
+                width: 100%;
+            }
+
+            .feature-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+
+        <div class="logo">
+            SUPRA<span>RACING</span>
+        </div>
+
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="/enquiry">ENQUIRY</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- PAGE HEADER -->
+    <div class="header">
+
+        <div>
+            <h1>ABOUT <span>US</span></h1>
+
+            <p>
+                Passion. Performance. Precision.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="about">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=85"
+                alt="Supra Racing Car">
+
+        </div>
+
+
+        <div class="about-content">
+
+            <h2>
+                WE LIVE FOR <span>SPEED</span>
+            </h2>
+
+            <p>
+                Supra Racing is a platform created for people who
+                share a passion for performance cars, racing and
+                automotive engineering.
+            </p>
+
+            <p>
+                From the legendary Toyota Supra to exotic machines
+                from Lamborghini, Ferrari and other performance
+                brands, we bring the world of fast cars together
+                in one place.
+            </p>
+
+            <p>
+                Our goal is simple — celebrate automotive culture,
+                explore incredible machines and share the excitement
+                of performance driving.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="features">
+
+        <h2>
+            WHY <span>SUPRA RACING?</span>
+        </h2>
+
+        <div class="feature-container">
+
+            <div class="feature">
+
+                <h3>01 — PERFORMANCE</h3>
+
+                <p>
+                    Discover powerful engines, incredible acceleration
+                    and advanced performance technology.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <h3>02 — EXOTIC CARS</h3>
+
+                <p>
+                    Explore legendary sports cars and exotic machines
+                    designed to deliver an unforgettable experience.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <h3>03 — PASSION</h3>
+
+                <p>
+                    We believe cars are more than machines.
+                    They represent freedom, engineering and passion.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        © 2026 <span>SUPRA RACING</span> | Built for Speed
+
+    </footer>
+
+</body>
+</html>
+
