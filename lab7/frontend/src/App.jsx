@@ -1,3 +1,7 @@
+import Book from "./components/Book";
+import Pen from "./components/Pen";
+
+
 const b1 = {
   picUrl: "https://m.media-amazon.com/images/I/518+W2zr3BL._AC_UY327_FMwebp_QL65_.jpg",
   bname: "React Design Pattern",
@@ -14,31 +18,28 @@ const b2 ={
   rating:5.0,
 };
 
-
-function Book(props){
-  const { rating, bname , price , quantity, picUrl } = props.book;
-  return (
-    <div className="book">
-      <img
-        src={picUrl} alt={bname}/>
-      <h1>{bname}</h1>
-      <h2>Price: {price}</h2>
-      <h3>Quantity: {quantity}</h3>
-      <h4>Rating: {rating}<span>{"\u2605"}</span></h4>
-      <button>ADD TO CART</button>
-    </div>
-);
+const p1 ={
+  picUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ08bDsyW2wtQH4adlVZLIL9xc2l6ws0RH7E1k3fwBKFw&s=10",
+  bname: "Exclusive Pen",
+  price: 100,
+  quantity:10,
+  rating: 4.8,
 }
 
 export default function App() {
   return (
    <>
-   <h1>ONLINE BOOK STORE</h1>
+   <h1>ONLINE STATIONERY STORE</h1>
    <div className="container">
    <Book book={b1} />
    <Book book={b2} />
+   <Book book={b1} />
    <Book book={b2} />
-   <Book book={b2} />
+   </div>
+   <div className="container">
+   <Pen pen={p1} />
+   <Pen pen={p1} />
+   <Pen pen={p1} />
    </div>
    </>
   );
